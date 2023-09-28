@@ -1,1 +1,44 @@
-<h1>Hello</h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <title>Registration</title>
+</head>
+<body>
+    <main>
+        <section>
+            <form method="" action="" >
+               {% csrf_token %} 
+
+               <label for="username">
+                    <span>Username</span>
+                    <input type="text" placeholder="Username" required>
+               </label>
+               <label for="username">
+                    <span>Email</span>
+                    <input type="email" placeholder="Email" required>
+               </label>
+
+               <label for="phone_number">
+                    <span>Phone Number</span>
+                    <input type="text" placeholder="Phone Number" required>
+               </label>
+
+               <label for="branch">
+                    <span>Branch</span>
+                    <select name="branch" id="branch">
+                        <option value="CSE">CSE</option>
+                    </select>
+               </label>
+
+               
+               <input type="submit" value="Register">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

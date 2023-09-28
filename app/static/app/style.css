@@ -1,0 +1,107 @@
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 5px;
+    --hover: 0 0% 90%;
+
+    color-scheme: dark;
+
+
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 30rem;
+    border: 1px solid hsl(var(--border));
+    padding: 2em;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+input {
+    appearance: none;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid hsl(var(--border));
+    padding: 0.25rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.45rem;
+    margin-top: 0.25rem;
+    height: 3rem;
+}
+
+input:focus {
+    outline: 1px solid hsl(var(--ring));
+}
+
+input[type=submit] {
+    border-radius: var(--radius);
+    color: hsl(var(--background));
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: hsl(var(--foreground));
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+select {
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    padding: 0.5rem;
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+input[type=submit]:hover {
+    background-color: hsl(var(--hover));
+}
