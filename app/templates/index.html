@@ -15,8 +15,8 @@
                {% csrf_token %} 
 
                <label for="username">
-                    <span>Username</span>
-                    <input type="text" placeholder="Username" required>
+                    <span>Full Name</span>
+                    <input type="text" placeholder="Full Name" required>
                </label>
                <label for="username">
                     <span>Email</span>
@@ -28,13 +28,28 @@
                     <input type="text" placeholder="Phone Number" required>
                </label>
 
-               <label for="branch">
+               <label for="branches">
                     <span>Branch</span>
-                    <select name="branch" id="branch">
-                        <option value="CSE">CSE</option>
+                    <select name="branches" id="branches">
+                        {% for small,branch in branches%}
+                            <option value="{{small}}">{{branch}}</option>
+                        {% endfor %}
+                    </select>
+               </label>
+                <label for="semesters">
+                    <span>Semester</span>
+                    <select name="semesters" id="semesters">
+                        {% for small,semester in semesters%}
+                            <option value="{{small}}">{{semester}}</option>
+                        {% endfor %}
                     </select>
                </label>
 
+
+               <label for="question">
+                <span>Question</span>
+                <textarea name="question" id="question"></textarea>
+               </label>
                
                <input type="submit" value="Register">
             </form>

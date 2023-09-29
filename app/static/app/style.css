@@ -74,7 +74,7 @@ input {
     height: 3rem;
 }
 
-input:focus {
+input:focus,textarea:focus {
     outline: 1px solid hsl(var(--ring));
 }
 
@@ -89,6 +89,19 @@ input[type=submit] {
     cursor: pointer;
     transition: border-color 0.25s;
 }
+
+textarea {
+    appearance: none;
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    outline: none;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+
 
 select {
     border-radius: var(--radius);
