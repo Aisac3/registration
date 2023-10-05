@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
 
 from .models import RegistrationForm
 branches = [
@@ -19,5 +20,16 @@ semesters = [
 # Create your views here.
 def index(request):
     form = RegistrationForm()
+
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        print(request.POST)
+        print(form.is_valid())
+        if form.is_valid():
+            print(form)
+            form.save()
+            return HttpResponse("Response recorded successfully")
     context = {"form":form,"branches":branches,"semesters":semesters}
     return render(request,'index.html',context)
+
+

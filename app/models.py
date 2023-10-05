@@ -23,9 +23,12 @@ class Registration(models.Model):
     full_name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=10)
-    branch = models.CharField(max_length=3,choices=branch,default="CSE")
-    semester = models.CharField(max_length=2,choices=semester,default="S1")
+    branches = models.CharField(max_length=3,choices=branch,default="CSE")
+    semesters = models.CharField(max_length=2,choices=semester,default="S1")
     question = models.TextField()
+
+    def __str__(self) -> str:
+        return self.full_name
 
 class RegistrationForm(ModelForm):
     class Meta:

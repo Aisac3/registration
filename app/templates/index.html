@@ -11,21 +11,21 @@
 <body>
     <main>
         <section>
-            <form method="" action="" >
+            <form method="POST" action="{% url 'home' %}" >
                {% csrf_token %} 
 
                <label for="username">
                     <span>Full Name</span>
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" name="full_name" placeholder="Full Name" required>
                </label>
                <label for="username">
                     <span>Email</span>
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                </label>
 
                <label for="phone_number">
                     <span>Phone Number</span>
-                    <input type="text" placeholder="Phone Number" required>
+                    <input type="text" name="phone_number" placeholder="Phone Number" required>
                </label>
 
                <label for="branches">
